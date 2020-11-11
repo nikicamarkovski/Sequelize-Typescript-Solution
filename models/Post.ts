@@ -42,8 +42,10 @@ import { User } from "./User";
     
 
       @ForeignKey(() => Category)
-      categoryId!: string;
-
+      categoryId!: number;
+      targetKey!: 'categoryId'
+  
       @BelongsTo(() => Category)
       category!: Category;
+     
 }

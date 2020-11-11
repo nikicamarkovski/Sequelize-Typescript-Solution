@@ -23,7 +23,7 @@ import {Post} from './Post'
       primaryKey: true,
       type: DataType.INTEGER.UNSIGNED
     })
-    categoryId!: string;
+    categoryId!: number;
 
     @Column({
         allowNull: false,
