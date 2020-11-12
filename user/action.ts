@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import db from '../models'
 import helper from '../helper';
 export const createUser = async (req : Request, res : Response) => {
-    if( await helper.CheckUsername(req.body.username)) {
+    if( await helper.checkUsername(req.body.username)) {
      
         
         res.json('Username already exist , please choose another').status(404)
@@ -14,5 +14,8 @@ export const createUser = async (req : Request, res : Response) => {
         }).then((newUser: any) => res.json(newUser))
     }
 
+}
+export const loginUser = async (req : Request , res : Response) => {
+    res.json( await helper.loginUser(req.body.username , req.body.password))
 }
 
