@@ -11,7 +11,7 @@ import db from "../models"
 export const createPost =async (req :Request , res: Response)=> {
     let category = await db.models.Category.findOne({attributes:['categoryId'] , where :{'name' : req.body.category} });
 
-    console.log();
+    
     db.models.Post.create({
    
         title : req.body.title,
